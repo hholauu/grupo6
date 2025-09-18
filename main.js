@@ -16,6 +16,7 @@ buttonNavbarToggler.classList.add("navbar-toggler")
 buttonNavbarToggler.type = "button"
 buttonNavbarToggler.dataBsToggle = "collapse"
 buttonNavbarToggler.dataBsTarget = "#navbarSupportedContent" //buttonNavbarToggler.setAttribute("data-bs-target","#navbarSupportedContent")
+buttonNavbarToggler.dataBsTarget = "#navbarSupportedContent" //buttonNavbarToggler.setAttribute("data-bs-target","#navbarSupportedContent")
 buttonNavbarToggler.ariaControls = "navbarSupportedContent"
 buttonNavbarToggler.ariaExpanded = "false"
 buttonNavbarToggler.ariaLabel = "Toggle navigation"
@@ -44,6 +45,7 @@ let aNavLink_active = document.createElement("a")
 aNavLink_active.classList.add("nav-link")
 aNavLink_active.classList.add("active")
 aNavLink_active.ariaCurrent = "page"
+aNavLink_active.ariaCurrent = "page"
 aNavLink_active.textContent = "Home"
 liNavItem.appendChild(aNavLink_active)
 
@@ -65,6 +67,9 @@ liNavItem_dropdown.classList.add("dropdown")
 let aNavLink_dropdownToggle = document.createElement("a")
 aNavLink_dropdownToggle.classList.add("nav-link")
 aNavLink_dropdownToggle.classList.add("dropdown-toggle")
+aNavLink_dropdownToggle.role = "button"
+aNavLink_dropdownToggle.dataBsToggle = "dropdown"
+aNavLink_dropdownToggle.ariaExpanded = "false"
 aNavLink_dropdownToggle.role = "button"
 aNavLink_dropdownToggle.dataBsToggle = "dropdown"
 aNavLink_dropdownToggle.ariaExpanded = "false"
@@ -112,6 +117,7 @@ let aNavLink_disabled = document.createElement("a")
 aNavLink_disabled.classList.add("nav-link")
 aNavLink_disabled.classList.add("disabled")
 aNavLink_disabled.ariaDisabled = "true"
+aNavLink_disabled.ariaDisabled = "true"
 aNavLink_disabled.textContent = "Disabled"
 liNavItem3.appendChild(aNavLink_disabled)
 
@@ -123,13 +129,25 @@ let formDFlex1 = document.createElement("form")
 formDFlex1.classList.add("d-flex")
 formDFlex1.role = "search"
 
+formDFlex1.classList.add("d-flex")
+formDFlex1.role = "search"
+
 let inputFormControl_me2 = document.createElement("input")
 inputFormControl_me2.classList.add("form-control")
 inputFormControl_me2.classList.add("me-2")
 inputFormControl_me2.type = "search"
+inputFormControl_me2.type = "search"
 inputFormControl_me2.placeholder = "Buscar"
 inputFormControl_me2.ariaLabel = "Search"
+inputFormControl_me2.ariaLabel = "Search"
 formDFlex1.appendChild(inputFormControl_me2)
+
+let buttonBtn_btnOutlineSuccess = document.createElement("button")
+buttonBtn_btnOutlineSuccess.classList.add("btn")
+buttonBtn_btnOutlineSuccess.classList.add("btn-outline-success")
+buttonBtn_btnOutlineSuccess.type = "submit"
+buttonBtn_btnOutlineSuccess.textContent = "Search"
+formDFlex1.appendChild(buttonBtn_btnOutlineSuccess)
 
 let buttonBtn_btnOutlineSuccess = document.createElement("button")
 buttonBtn_btnOutlineSuccess.classList.add("btn")
