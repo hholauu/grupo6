@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="navbar-container"></div> <!-- Aquí se insertará el navbar dinámico -->
+
+    <script>
+        // Crear la estructura del navbar dinámicamente en JS
+        const navbarContainer = document.getElementById('navbar-container');
+
+        const navbar = document.createElement('nav');
+        navbar.classList.add('navbar', 'navbar-expand-lg', 'bg-body-tertiary');
+
+        const containerFluid = document.createElement('div');
+        containerFluid.classList.add('container-fluid');
+
+        const navbarBrand = document.createElement('a');
+        navbarBrand.classList.add('navbar-brand');
+        navbarBrand.href = '#';
+        navbarBrand.textContent = 'Navbar';
+
+        const navbarToggler = document.createElement('button');
+        navbarToggler.classList.add('navbar-toggler');
+        navbarToggler.type = 'button';
+        navbarToggler.setAttribute('data-bs-toggle', 'collapse');
+        navbarToggler.setAttribute('data-bs-target', '#navbarSupportedContent');
+        navbarToggler.setAttribute('aria-controls', 'navbarSupportedContent');
+        navbarToggler.setAttribute('aria-expanded', 'false');
+        navbarToggler.setAttribute('aria-label', 'Toggle navigation');
+        navbarToggler.innerHTML = '<span class="navbar-toggler-icon"></span>';
+
+        const collapseDiv = document.createElement('div');
+        collapseDiv.classList.add('collapse', 'navbar-collapse');
+        collapseDiv.id = 'navbarSupportedContent';
+
+        const navbarNav = document.createElement('ul');
+        navbarNav.classList.add('navbar-nav', 'me-auto', 'mb-2', 'mb-lg-0');
+
+        // Lista de elementos de navegación
+        const navItems = [
+            { text: 'Home', href: '#', active: true },
+            { text: 'Link', href: '#' },
+            { text: 'Dropdown', href: '#', dropdown: true },
+            { text: 'Disabled', href: '#', disabled: true }
+        ];
+
+        navItems.forEach(item => {
+            const li = document.createElement('li');
+            li.classList.add('nav-item');
+
+            if (item.dropdown) {
+                li.classList.add('dropdown');
+                const a = document.createElement('a');
+                a.classList.add('nav-link', 'dropdown-toggle');
+                a.href = item.href;
+                a.setAttribute('role', 'button');
+                a.setAttribute('data-bs-toggle', 'dropdown');
+                a.setAttribute('aria-expanded', 'false');
+                a.textContent = item.text;
+
+                const ulDropdown = document.createElement('ul');
+                ulDropdown.classList.add('dropdown-menu');
+
+                const dropdownItems = [
+                    { text: 'Action', href: '#' },
+                    { text: 'Another action', href: '#' },
+                    { text: 'Something else here', href: '#' }
+                ];
+
+                dropdownItems.forEach(dropdownItem => {
+                    const liDropdown = document.createElement('li');
+                    const aDropdown = document.createElement('a');
+                    aDropdown.classList.add('dropdown-item');
+                    aDropdown.href = dropdownItem.href;
+                    aDropdown.textContent = dropdownItem.text;
+                    liDropdown.appendChild(aDropdown);
+                    ulDropdown.appendChild(liDropdown);
+                });
+
+                const hr = document.createElement('li');
+                hr.innerHTML = '<hr class="dropdown-divider">';
+                ulDropdown.appendChild(hr);
+
+                li.appendChild(a);
+                li.appendChild(ulDropdown);
+            } else if (item.disabled) {
+                const a = document.createElement('a');
+                a.classList.add('nav-link', 'disabled');
+                a.setAttribute('aria-disabled', 'true');
+                a.textContent = item.text;
+                li.appendChild(a);
+            } else {
+                const a = document.createElement('a');
+                a.classList.add('nav-link');
+                if (item.active) a.classList.add('active');
+                a.setAttribute('aria-current', item.active ? 'page' : '');
+                a.href = item.href;
+                a.textContent = item.text;
+                li.appendChild(a);
+            }
+
+            navbarNav.appendChild(li);
+        });
+
+        // Formulario de búsqueda
+        const form = document.createElement('form');
+        form.classList.add('d-flex');
+        form.setAttribute('role', 'search');
+
+        const input = document.createElement('input');
+        input.classList.add('form-control', 'me-2');
+        input.setAttribute('type', 'search');
+        input.setAttribute('placeholder', 'Search');
+        input.setAttribute('aria-label', 'Search');
+
+        const button = document.createElement('button');
+        button.classList.add('btn', 'btn-outline-success');
+        button.setAttribute('type', 'submit');
+        button.textContent = 'Search';
+
+        form.appendChild(input);
+        form.appendChild(button);
+
+        // Agregar los elementos al contenedor
+        collapseDiv.appendChild(navbarNav);
+        collapseDiv.appendChild(form);
+        containerFluid.appendChild(navbarBrand);
+        containerFluid.appendChild(navbarToggler);
+        containerFluid.appendChild(collapseDiv);
+        navbar.appendChild(containerFluid);
+        navbarContainer.appendChild(navbar);
+
+    </script>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

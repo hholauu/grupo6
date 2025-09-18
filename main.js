@@ -8,7 +8,7 @@ divContainerFluid.classList.add("container-fluid")
 
 let aNavbarBrand = document.createElement("a")
 aNavbarBrand.classList.add("navbar-brand")
-aNavbarBrand.textContent = "Navbar"
+aNavbarBrand.textContent = "Biblioteca"
 divContainerFluid.appendChild(aNavbarBrand)
 
 let buttonNavbarToggler = document.createElement("button")
@@ -143,3 +143,49 @@ divCollapse_navbarCollapse.appendChild(formDFlex1)
 divContainerFluid.appendChild(divCollapse_navbarCollapse)
 
 navBar.appendChild(divContainerFluid)
+
+
+let navBar2 = document.querySelector("#navBar2")
+
+let ulNav_justifyContentCenter = document.createElement("ul")
+ulNav_justifyContentCenter.classList.add("nav")
+ulNav_justifyContentCenter.classList.add("justify-content-evenly")
+
+let liNavItemUlNav_justifyContentCenter = document.createElement("li")
+liNavItemUlNav_justifyContentCenter.classList.add("nav-item")
+let aLiNavItemUlNav_justifyContentCenter = document.createElement("a")
+aLiNavItemUlNav_justifyContentCenter.classList.add("nav-link")
+aLiNavItemUlNav_justifyContentCenter.href = "https://www.youtube.com/watch?v=7dfUx6kFtEo&list=RD7dfUx6kFtEo&start_radio=1"
+aLiNavItemUlNav_justifyContentCenter.textContent = "Active"
+liNavItemUlNav_justifyContentCenter.appendChild(aLiNavItemUlNav_justifyContentCenter)
+
+let liNavItemUlNav_justifyContentCenter2 = document.createElement("li")
+liNavItemUlNav_justifyContentCenter2.classList.add("nav-item")
+let aLiNavItemUlNav_justifyContentCenter2 = document.createElement("a")
+aLiNavItemUlNav_justifyContentCenter2.classList.add("nav-link")
+aLiNavItemUlNav_justifyContentCenter2.href = "https://www.youtube.com/watch?v=7dfUx6kFtEo&list=RD7dfUx6kFtEo&start_radio=1"
+aLiNavItemUlNav_justifyContentCenter2.textContent = "Link"
+liNavItemUlNav_justifyContentCenter2.appendChild(aLiNavItemUlNav_justifyContentCenter2)
+
+let liNavItemUlNav_justifyContentCenter3 = document.createElement("li")
+liNavItemUlNav_justifyContentCenter3.classList.add("nav-item")
+let aLiNavItemUlNav_justifyContentCenter3 = document.createElement("a")
+aLiNavItemUlNav_justifyContentCenter3.classList.add("nav-link")
+aLiNavItemUlNav_justifyContentCenter3.href = "https://www.youtube.com/watch?v=7dfUx6kFtEo&list=RD7dfUx6kFtEo&start_radio=1"
+aLiNavItemUlNav_justifyContentCenter3.textContent = "Link"
+liNavItemUlNav_justifyContentCenter3.appendChild(aLiNavItemUlNav_justifyContentCenter3)
+
+let liNavItemUlNav_justifyContentCenter4 = document.createElement("li")
+liNavItemUlNav_justifyContentCenter4.classList.add("nav-item")
+let aLiNavItemUlNav_justifyContentCenter4 = document.createElement("a")
+aLiNavItemUlNav_justifyContentCenter4.classList.add("nav-link")
+aLiNavItemUlNav_justifyContentCenter4.href = "https://www.youtube.com/watch?v=7dfUx6kFtEo&list=RD7dfUx6kFtEo&start_radio=1"
+aLiNavItemUlNav_justifyContentCenter4.textContent = "Link"
+liNavItemUlNav_justifyContentCenter4.appendChild(aLiNavItemUlNav_justifyContentCenter4)
+
+ulNav_justifyContentCenter.appendChild(liNavItemUlNav_justifyContentCenter)
+ulNav_justifyContentCenter.appendChild(liNavItemUlNav_justifyContentCenter2)
+ulNav_justifyContentCenter.appendChild(liNavItemUlNav_justifyContentCenter3)
+ulNav_justifyContentCenter.appendChild(liNavItemUlNav_justifyContentCenter4)
+
+navBar2.appendChild(ulNav_justifyContentCenter)
